@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Generated scraper output
+foodpanda-products.json
+foodpanda-network-debug.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/

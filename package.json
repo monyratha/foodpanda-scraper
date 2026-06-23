@@ -1,0 +1,19 @@
+{
+  "name": "foodpanda-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "scrape": "node scrape-foodpanda.js",
+    "check": "node -c scrape-foodpanda.js && node -c server.js && node -c public/app.js",
+    "test": "npm run check"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "playwright": "^1.61.0"
+  }
+}

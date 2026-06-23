@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Foodpanda Scraper</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Local scraper</p>
+          <h1>Foodpanda products</h1>
+        </div>
+        <div class="status-pill" id="runState">Ready</div>
+      </header>
+
+      <section class="control-panel" aria-label="Scraper controls">
+        <form id="scrapeForm" class="scrape-form">
+          <label class="url-field">
+            <span>Foodpanda URL</span>
+            <input
+              id="targetUrl"
+              name="url"
+              type="url"
+              placeholder="https://www.foodpanda.com.kh/..."
+              autocomplete="url"
+              required
+            />
+          </label>
+
+          <label class="switch">
+            <input id="showBrowser" name="showBrowser" type="checkbox" checked />
+            <span class="switch-track" aria-hidden="true"></span>
+            <span>Show browser</span>
+          </label>
+
+          <button id="runButton" class="primary-button" type="submit">
+            Run scrape
+          </button>
+        </form>
+
+        <div class="actions" aria-label="Output actions">
+          <button id="copyJson" class="secondary-button" type="button">Copy JSON</button>
+          <button id="downloadJson" class="secondary-button" type="button">
+            Download JSON
+          </button>
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="Scrape summary">
+        <div class="metric">
+          <span>Products</span>
+          <strong id="productCount">0</strong>
+        </div>
+        <div class="metric">
+          <span>With barcode</span>
+          <strong id="barcodeCount">0</strong>
+        </div>
+        <div class="metric">
+          <span>With photo</span>
+          <strong id="photoCount">0</strong>
+        </div>
+        <div class="metric wide">
+          <span>Status</span>
+          <strong id="statusText">Loading saved output</strong>
+        </div>
+      </section>
+
+      <section class="results-section" aria-label="Scrape results">
+        <div class="table-toolbar">
+          <h2>Output</h2>
+          <input
+            id="filterInput"
+            type="search"
+            placeholder="Filter name or barcode"
+            aria-label="Filter products"
+          />
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Barcode</th>
+                <th>Name</th>
+                <th class="price-column">Price</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+          <div id="emptyState" class="empty-state" hidden>No products yet.</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
